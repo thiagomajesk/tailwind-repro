@@ -16,7 +16,8 @@ config :tailwind_repro, TailwindReproWeb.Endpoint,
   secret_key_base: "xS9sPbCg5mbfNlMOi/G9KUQRyb4G9CWtybfYCE4tCYsEpV9WJwzoUeceti0mzG2i",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    npm: ["run", "watch", cd: Path.expand("../assets", __DIR__)]
   ]
 
 # ## SSL Support
